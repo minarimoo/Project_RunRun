@@ -154,6 +154,7 @@ public class InputController : MonoSingle<InputController>,
     // Mapping Functions
     void Input.IInteractionActions.OnClick(InputAction.CallbackContext context)
     {
+        // 해당 Callback Action에 등록된 모든 함수들을 호출하게 함.
         string actionName = context.action.name;
 
         // 해당 Action에 등록된 callback 함수가 없다면 return;
