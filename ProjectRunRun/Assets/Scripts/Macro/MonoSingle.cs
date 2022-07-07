@@ -6,7 +6,7 @@ using UnityEngine;
 public class MonoSingle<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _inst;
-
+    
     public static T Inst
     {
         get

@@ -88,8 +88,8 @@ public class InputController : MonoSingle<InputController>,
 
     private void Awake()
     {
-        this.inputSystem = new Input();
-        this.inputSystem.Interaction.SetCallbacks(instance : this);
+        inputSystem = new Input();
+        inputSystem.Interaction.SetCallbacks(instance : this);
 
         mouse = new Mouse();
         mouse = Mouse.current;

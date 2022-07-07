@@ -19,10 +19,10 @@ public class LifeTimer : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
         
-    }
+    //}
 
     // Update is called once per frame
     void Update()
@@ -36,12 +36,7 @@ public class LifeTimer : MonoBehaviour
         else
         {
             Debug.Log("Time Over");
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            GameManager.Inst.IsGameOver = true;
         }
-        
     }
 }

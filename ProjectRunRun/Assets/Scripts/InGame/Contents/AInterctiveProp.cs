@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AInteractiveProp : MonoBehaviour
 {
-    protected Sprite m_sprite;
+    protected Sprite sprite;
     protected bool canInteraction;
     protected bool isInteraction;
 
@@ -13,7 +13,7 @@ public class AInteractiveProp : MonoBehaviour
 
     protected virtual void Awake()
     {
-        m_sprite = this.gameObject.GetComponent<Sprite>();
+        sprite = GetComponent<Sprite>();
     }
 
     protected virtual void Start()
