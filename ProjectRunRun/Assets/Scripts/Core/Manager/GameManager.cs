@@ -8,7 +8,7 @@ public class GameManager : MonoSingle<GameManager>
     [SerializeField]
     private bool isGameOver;    
 
-    public GameObject SceneController;
+    public GameObject sceneController;
 
     private void Awake()
     {
@@ -16,10 +16,10 @@ public class GameManager : MonoSingle<GameManager>
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
        
-    }
+    //}
 
     // Update is called once per frame
     void Update()

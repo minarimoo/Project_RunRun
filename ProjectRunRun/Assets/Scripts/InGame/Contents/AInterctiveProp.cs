@@ -13,7 +13,7 @@ public class AInteractiveProp : MonoBehaviour
 
     protected virtual void Awake()
     {
-        sprite = GetComponent<Sprite>();
+        sprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     protected virtual void Start()
@@ -29,7 +29,7 @@ public class AInteractiveProp : MonoBehaviour
             Vector2 mousePosition = InputController.Inst.GetMousePosition();
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            Ray2D ray2D = new Ray2D(mousePosition, Vector2.zero);
+            Ray2D ray2D = new (mousePosition, Vector2.zero);
             RaycastHit2D HitResult = Physics2D.Raycast(ray2D.origin, ray2D.direction);
 
             // 나 자신이 클릭되었을 때만 true를 return 함
@@ -56,7 +56,7 @@ public class AInteractiveProp : MonoBehaviour
         Vector2 mousePosition = InputController.Inst.GetMousePosition();
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        Ray2D ray2D = new Ray2D(mousePosition, Vector2.zero);
+        Ray2D ray2D = new (mousePosition, Vector2.zero);
         RaycastHit2D HitResult = Physics2D.Raycast(ray2D.origin, ray2D.direction);
 
         // 상호작용이 가능한 물체라면 색깔을 변경

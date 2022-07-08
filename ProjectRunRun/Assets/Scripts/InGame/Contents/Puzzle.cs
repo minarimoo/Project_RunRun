@@ -28,8 +28,8 @@ public class Puzzle: AInteractiveProp
     {
         base.Start();
 
-        InputController.Inst.AddCallbackFunc(StartInteraction, "Click", KEY_STATE.Started);
-        InputController.Inst.AddCallbackFunc(EndInteraction, "Click", KEY_STATE.Canceled);
+        InputController.Inst.AddCallbackFunc(StartInteraction, "Click", KEY_STATE.Started, gameObject);
+        InputController.Inst.AddCallbackFunc(EndInteraction, "Click", KEY_STATE.Canceled, gameObject);
 
     }
 
@@ -47,7 +47,7 @@ public class Puzzle: AInteractiveProp
             return;
         }
 
-        RaycastHit2D hitResult = new RaycastHit2D();
+        RaycastHit2D hitResult = new ();
 
         // 현재 버튼이 눌린 경우
         if (CheckMouseRay(ref hitResult))
@@ -86,5 +86,12 @@ public class Puzzle: AInteractiveProp
             default:
                 break;
         }
+    }
+
+    // 객체가 소멸될때 등록했던 콜백함수를 삭제해준다.
+    // 이거 컨트롤러가 알아서 하게끔? 하려다가 매프레임 업데이트에서 체크하는게 더 구릴거같아서 소멸될때 함수호출
+    private void OnDestroy()
+    {
+        
     }
 }

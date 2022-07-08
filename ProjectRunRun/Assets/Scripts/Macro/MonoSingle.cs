@@ -21,12 +21,15 @@ public class MonoSingle<T> : MonoBehaviour where T : MonoBehaviour
                     var singletonObject = new GameObject();
                     _inst = singletonObject.AddComponent<T>();
                     singletonObject.name = typeof(T).ToString();
-
-                    DontDestroyOnLoad(singletonObject);
                 }
+
+                DontDestroyOnLoad(_inst);
             }
 
             return _inst;
         }
     }
 }
+
+
+

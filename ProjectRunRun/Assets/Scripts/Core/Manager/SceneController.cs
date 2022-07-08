@@ -15,22 +15,19 @@ public class SceneController : MonoSingle<SceneController>
     public SCENE_LIST currentScene;
     public SCENE_LIST nextScene;
 
-
-    private GameObject sceneController;
     private bool isSceneEnd;
 
     private void Awake()
-    {
-        DontDestroyOnLoad(SceneController.Inst.gameObject);
+    { 
+        GameManager.Inst.sceneController = SceneController.Inst.gameObject;
 
         currentScene = SCENE_LIST.TitleScene;
         nextScene = SCENE_LIST.MainScene;
-
     }
 
-    void Start()
-    {
-    }
+    //void Start()
+    //{
+    //}
 
         // Update is called once per frame
         void Update()
